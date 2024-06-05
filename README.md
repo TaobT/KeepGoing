@@ -1,5 +1,5 @@
 <p align="center">
-    ![LogoKeepGoing-removebg-preview (1)](https://drive.google.com/file/d/1_varqYDRaB3qHsxxEJ6O9zAiUC9BlEj3/view?usp=sharing)
+    ![LogoKeepGoing](Proyecto-DDI-KeepGoing/LogoKeepGoing.png)
 </p>
 
 # Proyecto-DDI-KeepGoing
