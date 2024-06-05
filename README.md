@@ -1,8 +1,9 @@
 <p align="center">
-    <img src="https://drive.google.com/file/d/1_varqYDRaB3qHsxxEJ6O9zAiUC9BlEj3/view?usp=sharing"/>
+    ![LogoKeepGoing-removebg-preview (1)](https://github.com/andtruazp/Proyecto-DDI-KeepGoing/assets/124712008/958e511e-db37-483d-8200-210ff1d81389)
 </p>
 
 # Proyecto-DDI-KeepGoing
+
 
 # Enunciado de visión.
 "Desarrollar una aplicación móvil innovadora que se conecte con dispositivos wearables para registrar las calorías quemadas y motivar a los usuarios a través de frases personalizadas basadas en su rendimiento. La aplicación utilizará Flutter para el desarrollo móvil y APIs de dispositivos wearables para proporcionar una experiencia de usuario sin interrupciones, fomentando un estilo de vida saludable de una manera divertida y atractiva."
