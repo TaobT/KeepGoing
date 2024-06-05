@@ -55,6 +55,8 @@ Como usuario, quiero recibir frases motivacionales basadas en las calorías quem
 
 # Prototipo propuesto 
 
-<span>https://drive.google.com/file/d/1tbI1EE0ujwijlrVJq5pxEq-1PLfxjZI7/view?usp=drive_link</span>
+<img src="Prototipo_01.jpg" />
+<img src="Prototipo_02.jpg" />
+<img src="Prototipo_03.jpg" />
 
 # Ruta del tablero
