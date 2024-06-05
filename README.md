@@ -1,5 +1,5 @@
 <p align="center">
-    ![LogoKeepGoing-removebg-preview (1)](https://github.com/andtruazp/Proyecto-DDI-KeepGoing/assets/124712008/958e511e-db37-483d-8200-210ff1d81389)
+    ![LogoKeepGoing-removebg-preview (1)](https://drive.google.com/file/d/1_varqYDRaB3qHsxxEJ6O9zAiUC9BlEj3/view?usp=sharing)
 </p>
 
 # Proyecto-DDI-KeepGoing
