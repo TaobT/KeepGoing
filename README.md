@@ -1,6 +1,7 @@
- ![LogoKeepGoing](LogoKeepGoing.png) 
+<p align="center">
+  <img src="LogoKeepGoing.png" alt="LogoKeepGoing" />
+</p>
 
-   
 
 # Proyecto-DDI-KeepGoing
 
