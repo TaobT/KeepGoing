@@ -1,5 +1,5 @@
 <p align="center">
-    ![LogoKeepGoing](Proyecto-DDI-KeepGoing/LogoKeepGoing.png)
+    ![LogoKeepGoing](LogoKeepGoing.png)
 </p>
 
 # Proyecto-DDI-KeepGoing
