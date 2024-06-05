@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://imgs.search.brave.com/v5SISfnf2pD8H0-1PueumhYLHIox0uppHmzcTo29ddY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jYW1v/LmdpdGh1YnVzZXJj/b250ZW50LmNvbS8y/ODkyNGE4Y2YzOTlj/NDg5YTVkZWJmZGQ5/ZTFmNTBmZDRmOTM2/ZmFmN2RlZmQ0MDFh/NGRjZjhjM2Y1ZjE5/MDA4LzY4NzQ3NDcw/NzMzYTJmMmY3Mzc0/NmY3MjYxNjc2NTJl/Njc2ZjZmNjc2YzY1/NjE3MDY5NzMyZTYz/NmY2ZDJmNjM2ZDcz/MmQ3Mzc0NmY3MjYx/Njc2NTJkNjI3NTYz/NmI2NTc0MmY2MzM4/MzIzMzY1MzUzMzYy/MzM2MTMxNjEzNzYy/MzA2NDMzMzY2MTM5/MmU3MDZlNjc" alt="banner flutter" width="330"/>
+    <img src="https://drive.google.com/file/d/1_varqYDRaB3qHsxxEJ6O9zAiUC9BlEj3/view?usp=sharing"/>
 </p>
 
 # Proyecto-DDI-KeepGoing
@@ -25,6 +25,31 @@
 - 1TB de almacenamiento o 256GB de SSD
 
 # Historias de usuario.
+## Historia de Usuario 1: Registro y Autenticación de Usuarios
+Como usuario nuevo, quiero poder registrarme en la aplicación para crear mi cuenta personal.
+    Criterios de Aceptación:
+- Debe haber una pantalla de registro con campos para email, contraseña.
+- Debe recibir un mensaje de confirmación tras un registro exitoso.
+- La autenticación debe estar protegida por JWT.
+
+## Historia de Usuario 2: Inicio de Sesión
+Como usuario registrado, quiero poder iniciar sesión en la aplicación para acceder a mi cuenta.
+    Criterios de Aceptación:
+- Debe haber una pantalla de inicio de sesión con campos para email y contraseña.
+- Debe recibir un mensaje de error si las credenciales son incorrectas.
+- Debe poder acceder a la pantalla de monitoreo tras un inicio de sesión exitoso.
+  
+## Historia de Usuario 3: Monitoreo de Ejercicio
+Como usuario, quiero que la aplicación registre las calorías quemadas y la distancia recorrida mientras hago ejercicio.
+    Criterios de Aceptación:
+- La aplicación debe conectarse con el wearable y obtener datos en tiempo real.
+- Los datos de calorías y distancia deben mostrarse en la pantalla de monitoreo.
+  
+## Historia de Usuario 4: Frases Motivacionales
+Como usuario, quiero recibir frases motivacionales basadas en las calorías quemadas para mantenerme motivado.
+    Criterios de Aceptación:
+- Debe mostrar una frase motivacional en la pantalla de monitoreo cada vez que se actualicen las calorías quemadas.
+- Las frases deben variar según la cantidad de calorías quemadas. 
 
 # Prototipo propuesto 
 
