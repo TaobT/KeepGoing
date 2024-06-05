@@ -54,6 +54,7 @@ Como usuario, quiero recibir frases motivacionales basadas en las calorías quem
 - Las frases deben variar según la cantidad de calorías quemadas. 
 
 # Prototipo propuesto 
+- [Tablero en Trello](https://trello.com/invite/b/Xq6jTaFR/ATTI21a09b24e08dbf764fb0d385649f96dcD42161E3/keep-going)
 
 <img src="Prototipo_01.jpg" />
 <img src="Prototipo_02.jpg" />
