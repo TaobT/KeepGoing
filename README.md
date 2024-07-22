@@ -22,6 +22,12 @@
 - [MongoDB](https://www.mongodb.com/es/cloud/atlas/register)
   
 # Hardware empleado.
+- Placa ESP32
+### Sensores:
+- Acelerómetro
+- Frecuencia Cardiaca Max30100
+- Temperautra MAX30205
+
 ### Dispositivos moviles 
 - Dispositivo android
 ### Computadora para desarrollo
@@ -30,27 +36,14 @@
 - 1TB de almacenamiento o 256GB de SSD
 
 # Historias de usuario.
-## Historia de Usuario 1: Registro y Autenticación de Usuarios
-Como usuario nuevo, quiero poder registrarme en la aplicación para crear mi cuenta personal.
-    Criterios de Aceptación:
-- Debe haber una pantalla de registro con campos para email, contraseña.
-- Debe recibir un mensaje de confirmación tras un registro exitoso.
-- La autenticación debe estar protegida por JWT.
-
-## Historia de Usuario 2: Inicio de Sesión
-Como usuario registrado, quiero poder iniciar sesión en la aplicación para acceder a mi cuenta.
-    Criterios de Aceptación:
-- Debe haber una pantalla de inicio de sesión con campos para email y contraseña.
-- Debe recibir un mensaje de error si las credenciales son incorrectas.
-- Debe poder acceder a la pantalla de monitoreo tras un inicio de sesión exitoso.
   
-## Historia de Usuario 3: Monitoreo de Ejercicio
-Como usuario, quiero que la aplicación registre las calorías quemadas y la distancia recorrida mientras hago ejercicio.
+## Historia de Usuario 1: Monitoreo de Ejercicio
+Como usuario, quiero que la aplicación registre las calorías quemadas.
     Criterios de Aceptación:
 - La aplicación debe conectarse con el wearable y obtener datos en tiempo real.
 - Los datos de calorías y distancia deben mostrarse en la pantalla de monitoreo.
   
-## Historia de Usuario 4: Frases Motivacionales
+## Historia de Usuario 2: Frases Motivacionales
 Como usuario, quiero recibir frases motivacionales basadas en las calorías quemadas para mantenerme motivado.
     Criterios de Aceptación:
 - Debe mostrar una frase motivacional en la pantalla de monitoreo cada vez que se actualicen las calorías quemadas.
