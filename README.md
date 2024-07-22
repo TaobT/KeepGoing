@@ -50,7 +50,6 @@ Como usuario, quiero recibir frases motivacionales basadas en las calorías quem
 - Las frases deben variar según la cantidad de calorías quemadas. 
 
 # Prototipo propuesto 
-<img src="Prototipo_01.jpg" />
 <img src="Prototipo_02.jpg" />
 <img src="Prototipo_03.jpg" />
 
