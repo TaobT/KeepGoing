@@ -15,11 +15,10 @@
 # Software empleado.
 - [Git](https://git-scm.com) 
 - [VSCode](https://code.visualstudio.com/)
-- [Postman](https://www.postman.com) 
 - [Android Studio](https://developer.android.com/studio?hl=es-419)
 - [Flutter SDK](https://docs.flutter.dev/get-started/install)
-- [NodeJS](https://nodejs.org/en)
-- [MongoDB](https://www.mongodb.com/es/cloud/atlas/register)
+- [MQTT Broker](https://mosquitto.org)
+
   
 # Hardware empleado.
 - Placa ESP32
