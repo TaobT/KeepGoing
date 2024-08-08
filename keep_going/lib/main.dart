@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keep_going/presentation/screens/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
                 ]
                 ),
             ),
+            child: const SafeArea(child: HomeScreen())
           ),
         ),
       ),
