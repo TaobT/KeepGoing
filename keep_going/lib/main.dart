@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_going/presentation/screens/home_screen.dart';
+import 'package:keep_going/presentation/screens/home/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.pinkAccent.shade100,
-                  Colors.purpleAccent.shade200,
-                  Colors.purpleAccent.shade700,
+                  const Color.fromARGB(255, 241, 209, 220),
+                  const Color.fromARGB(255, 223, 200, 193),
+                  Color.fromARGB(255, 255, 165, 119),
                 ]
                 ),
             ),
