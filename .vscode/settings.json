@@ -18,5 +18,6 @@
         "titleBar.inactiveBackground": "#1857a499",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#1857a4"
+    "peacock.color": "#1857a4",
+    "cmake.sourceDirectory": "C:/Users/carla/OneDrive/Documentos/Cuatri 9/Desarrollo de Dispositivos Inteligentes/Unidad3/Proyecto Final/Proyecto-DDI-KeepGoing/keep_going/linux"
 }
