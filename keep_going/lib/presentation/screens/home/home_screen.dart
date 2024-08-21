@@ -70,7 +70,7 @@ class HomeScreen  extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildStatColumn(Icons.do_not_step_sharp, '312', 'PASOS'),
+                  _buildStatColumn(Icons.directions_walk_outlined, '312', 'PASOS'),
                   _buildStatColumn(Icons.location_on, '5.6', 'KM'),
                   _buildStatColumn(Icons.timer, '120', 'MIN'),
                 ],
