@@ -22,9 +22,12 @@ class MySQLService {
     final conn = await getConnection();
 
     // Ejecutar la consulta para obtener los datos del sensor con clave 3 (pulso)
+      // "SELECT valor, fechaRegistro FROM tbl_detalle_sensor WHERE cveSensor = 3"
     var res = await conn.execute(
-      "SELECT valor, fechaRegistro FROM tbl_detalle_sensor WHERE cveSensor = 3"
+      "SELECT valor, fechaRegistro FROM tbl_detalle_sensor WHERE cveSensor = 3 ORDER BY fechaRegistro DESC LIMIT 1"
+
     );
+    
     print(res);
 
     List<Map<String, dynamic>> data = [];
@@ -33,7 +36,7 @@ class MySQLService {
         "frecuencia": row.colAt(0),          // valor del pulso
         "fechaRegistro": row.colAt(1),  // fecha del registro
       });
-      print(data);
+      //print(data);
     }
 
     await conn.close();

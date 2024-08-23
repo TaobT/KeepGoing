@@ -10,7 +10,7 @@ class FitnessAnswer {
   final GoogleTranslator _translator = GoogleTranslator();  
 
   Future<Frase> fraseApi({String toLang = 'es'}) async{
-    print('Llamando a la API para obtener la frase');
+    //print('Llamando a la API para obtener la frase');
     final response = await _dio.get(
       'https://api.api-ninjas.com/v1/quotes?category=inspirational',
       options: Options(
@@ -20,12 +20,12 @@ class FitnessAnswer {
         ),
 
     );
-     print('Respuesta sin procesar de la API: ${response.data}');
+     //print('Respuesta sin procesar de la API: ${response.data}');
 
     final quotesModel = QuotesModel.fromJsonToMap(response.data[0]);
     var translatedQuote = await _translator.translate(quotesModel.quote, to: toLang);
 
-    print('Frase traducida: ${translatedQuote.text}');
+    //print('Frase traducida: ${translatedQuote.text}');
 
     // return quotesModel.toFraseEntity();
     return Frase(

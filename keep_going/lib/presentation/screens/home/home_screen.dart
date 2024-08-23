@@ -29,23 +29,29 @@ class _HomeScreenState extends State<HomeScreen> {
     _pulsoSubscription = MqttService.obtenerPulsosStream().listen((event) {
       setState(() {
         _pulso = event;
+        print('Datos de pulso');
+        print(_pulso);
       });
     });
 
     _tempSubscription = MqttService.obtenerTemperaturaStream().listen((event) {
       setState(() {
         _temp = event;
+        print('Datos de temperatura');
+        print(_temp);
       });
     });
 
     _oxigenoSubscription = MqttService.obtenerOxigenoStream().listen((event) {
       setState(() {
+        print('Datos de oxigeno');
         _oxigeno = event;
+        print(_oxigeno);
       });
     });
 
   }
-
+  
   @override
   void dispose() {
     _pulsoSubscription.cancel();
