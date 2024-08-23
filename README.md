@@ -10,7 +10,7 @@
 - Ramirez Campos Juan de Dios
 
 # Enunciado de visión.
-"Desarrollar una aplicación móvil innovadora que se conecte con dispositivos wearables para registrar las calorías quemadas y motivar a los usuarios a través de frases personalizadas basadas en su rendimiento. La aplicación utilizará Flutter para el desarrollo móvil y APIs de dispositivos wearables para proporcionar una experiencia de usuario sin interrupciones, fomentando un estilo de vida saludable de una manera divertida y atractiva."
+"Desarrollar una aplicación móvil innovadora que se conecte con dispositivos wearables para registrar la recuencia cardíaca y la temperatura y motivar a los usuarios a través de frases inspiradoras. La aplicación utilizará Flutter para el desarrollo móvil y APIs de dispositivos wearables para proporcionar una experiencia de usuario sin interrupciones, fomentando un estilo de vida saludable de una manera divertida y atractiva."
 
 # Software empleado.
 - [Git](https://git-scm.com) 
@@ -23,7 +23,6 @@
 # Hardware empleado.
 - Placa ESP32
 ### Sensores:
-- Acelerómetro
 - Frecuencia Cardiaca Max30100
 - Temperautra MAX30205
 
@@ -37,16 +36,15 @@
 # Historias de usuario.
   
 ## Historia de Usuario 1: Monitoreo de Ejercicio
-Como usuario, quiero que la aplicación registre las calorías quemadas.
+Como usuario, quiero que la aplicación registre mi frecuencia cardíaca.
     Criterios de Aceptación:
 - La aplicación debe conectarse con el wearable y obtener datos en tiempo real.
-- Los datos de calorías y distancia deben mostrarse en la pantalla de monitoreo.
+- Los datos de la frecuencia cardíaca y el oxígeno deben mostrarse en la pantalla de monitoreo.
   
 ## Historia de Usuario 2: Frases Motivacionales
-Como usuario, quiero recibir frases motivacionales basadas en las calorías quemadas para mantenerme motivado.
+Como usuario, quiero recibir frases motivacionales basadas en timpos estrategicos para inspirar.
     Criterios de Aceptación:
-- Debe mostrar una frase motivacional en la pantalla de monitoreo cada vez que se actualicen las calorías quemadas.
-- Las frases deben variar según la cantidad de calorías quemadas. 
+- Debe mostrar una frase motivacional en la pantalla de monitoreo cada cierto timpo transcurrido. 
 
 # Prototipo propuesto 
 <img src="Prototipo_02.jpg" />
