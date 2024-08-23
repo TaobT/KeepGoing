@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:keep_going/source/network/mqtt_service.dart';
@@ -10,47 +11,47 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late MqttService _service;
+  
   double _temp = 0;
   double _oxigeno = 0;
   double _pulso = 0;
+
+  late StreamSubscription<double> _pulsoSubscription;
+  late StreamSubscription<double> _tempSubscription;
+  late StreamSubscription<double> _oxigenoSubscription;
+  
 
   @override
   void initState() {
     super.initState();
 
-    _service = MqttService('broker.emqx.io');
-    _initializeStreams();
+
+    _pulsoSubscription = MqttService.obtenerPulsosStream().listen((event) {
+      setState(() {
+        _pulso = event;
+      });
+    });
+
+    _tempSubscription = MqttService.obtenerTemperaturaStream().listen((event) {
+      setState(() {
+        _temp = event;
+      });
+    });
+
+    _oxigenoSubscription = MqttService.obtenerOxigenoStream().listen((event) {
+      setState(() {
+        _oxigeno = event;
+      });
+    });
+
   }
 
-  void _initializeStreams() {
-    _service.connect().then((_) {
-      // Suscripción al tópico de temperatura
-      // _service.obtenerStreamDeSensor('iot/resul/temp').listen((value) {
-      //   setState(() {
-      //     _temp = value;
-      //     print(_temp);
-      //   });
-      // });
-
-      // // Suscripción al tópico de frecuencia cardiaca
-      // _service.obtenerStreamDeSensor('iot/resul/oxigeno').listen((value) {
-      //   setState(() {
-      //     _oxigeno = value;
-      //     print(_oxigeno);
-      //   });
-      // });
-
-      // Suscripción al tópico de acelerometro
-      _service.obtenerStreamDeSensor('iot/resul/temp').listen((value) {
-        setState(() {
-          _pulso = value;
-          print(_pulso);
-         });
-      });
-    }).catchError((e) {
-      print('Error de conexión: $e');
-    });
+  @override
+  void dispose() {
+    _pulsoSubscription.cancel();
+    _tempSubscription.cancel();
+    _oxigenoSubscription.cancel();
+    super.dispose();
   }
 
   @override
@@ -109,18 +110,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(height: 60),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     _buildDayCircle('DOM', true),
-              //     _buildDayCircle('LUN', true),
-              //     _buildDayCircle('MAR', true),
-              //     _buildDayCircle('MIE', true),
-              //     _buildDayCircle('JUE', false),
-              //     _buildDayCircle('VIE', false),
-              //     _buildDayCircle('SAB', false),
-              //   ],
-              // ),
             ],
           ),
         ),
