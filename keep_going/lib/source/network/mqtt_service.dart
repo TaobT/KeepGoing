@@ -23,18 +23,32 @@ class MqttService {
     print('::Inicializado correctamente::');
   }
 
-  Stream<double> obtenerTemperaturaStream() async* {
+  Future<void> connect() async {
+    try {
+      await client.connect();
+    } catch (e) {
+      print('Error de conexión: $e');
+      client.disconnect();
+    }
+
+    if (client.connectionStatus?.state != MqttConnectionState.connected) {
+      print('Error: No conectado');
+      client.disconnect();
+    }
+  }
+
+  Stream<double> obtenerStreamDeSensor(String topic) async* {
     try{
       await client.connect();
     }catch (e){
-      print(e);
+      print(e);  
       client.disconnect();
       return;
     }
-    // Verificar si el cliente se conecto
+    //Verificar si el cliente se conecto
     if(client.connectionStatus?.state == MqttConnectionState.connected){
       // Generar la suscripcion al topico
-      client.subscribe('iot/tmp', MqttQos.exactlyOnce);
+      client.subscribe('iot/resul/temp', MqttQos.exactlyOnce);
 
       // Obtener los valores del topico
       await for (final c in client.updates!){
@@ -46,5 +60,9 @@ class MqttService {
       client.disconnect();
     }
 
+
   }
+
 }
+
+

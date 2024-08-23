@@ -1,11 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-//import 'package:pedometer/pedometer.dart';
-// import 'package:fl_chart/fl_chart.dart';
+import 'package:keep_going/source/network/mqtt_service.dart';
 
-
-class HomeScreen  extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late MqttService _service;
+  double _temp = 0;
+  double _oxigeno = 0;
+  double _pulso = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _service = MqttService('broker.emqx.io');
+    _initializeStreams();
+  }
+
+  void _initializeStreams() {
+    _service.connect().then((_) {
+      // Suscripción al tópico de temperatura
+      // _service.obtenerStreamDeSensor('iot/resul/temp').listen((value) {
+      //   setState(() {
+      //     _temp = value;
+      //     print(_temp);
+      //   });
+      // });
+
+      // // Suscripción al tópico de frecuencia cardiaca
+      // _service.obtenerStreamDeSensor('iot/resul/oxigeno').listen((value) {
+      //   setState(() {
+      //     _oxigeno = value;
+      //     print(_oxigeno);
+      //   });
+      // });
+
+      // Suscripción al tópico de acelerometro
+      _service.obtenerStreamDeSensor('iot/resul/temp').listen((value) {
+        setState(() {
+          _pulso = value;
+          print(_pulso);
+         });
+      });
+    }).catchError((e) {
+      print('Error de conexión: $e');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +62,7 @@ class HomeScreen  extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          // leading: const Icon(Icons.menu, size: 30.0,),
           actions: const [
-            // Icon(Icons.settings),
             SizedBox(width: 10),
           ],
         ),
@@ -27,29 +71,25 @@ class HomeScreen  extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // const Text(
-              //   'Tue 2/18',
-              //   style: TextStyle(color: Colors.white, fontSize: 20),
-              // ),
               const SizedBox(height: 14),
               CircularPercentIndicator(
                 radius: 180.0,
                 lineWidth: 13.0,
-                percent: 0.75, // Esto representa el progreso
-                center: const Column(
+                percent: _temp / 100, 
+                center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.local_fire_department, size: 120.0, color: Colors.black,),
+                    const Icon(Icons.local_fire_department, size: 120.0, color: Colors.black,),
                     Text(
-                      '478',
-                        style: TextStyle(
+                      _temp.toStringAsFixed(1), 
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
                       ),
                     ),    
-                    Text(
-                      'Calorias',
+                    const Text(
+                      'Temperatura (°C)',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -58,134 +98,35 @@ class HomeScreen  extends StatelessWidget {
                   ],
                 ),
                 backgroundColor: Colors.white,
-                progressColor: Colors.white,
-                // linearGradient: const LinearGradient(
-                //   colors: [Colors.red, Colors.yellow, Colors.green],
-                //   begin: Alignment.bottomLeft,
-                //   end: Alignment.topRight,
-                // ),
-                // circularStrokeCap: CircularStrokeCap.round,
+                progressColor: Colors.red,
               ),
               const SizedBox(height: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildStatColumn(Icons.directions_walk_outlined, '312', 'PASOS'),
-                  _buildStatColumn(Icons.location_on, '5.6', 'KM'),
-                  _buildStatColumn(Icons.timer, '120', 'MIN'),
+                  _buildStatColumn(Icons.favorite, _oxigeno.toStringAsFixed(1), 'Frec. Cardiaca (lpm)'),
+                  _buildStatColumn(Icons.speed, _pulso.toStringAsFixed(2), 'Oxígeno (h2o)'),
                 ],
               ),
-              // const Spacer(),
               const SizedBox(height: 60),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildDayCircle('DOM', true),
-                  _buildDayCircle('LUN', true),
-                  _buildDayCircle('MAR', true),
-                  _buildDayCircle('MIE', true),
-                  _buildDayCircle('JUE', false),
-                  _buildDayCircle('VIE', false),
-                  _buildDayCircle('SAB', false),
-                ],
-              ),
-              //  const SizedBox(height: 60),
-              //  SizedBox(
-              //   height: 400,
-              //    child: SingleChildScrollView(
-              //     scrollDirection: Axis.vertical,
-              //     child: BarChart(
-              //       BarChartData(
-              //         alignment: BarChartAlignment.spaceAround,
-              //         maxY: 10000,
-              //         barTouchData: BarTouchData(enabled: false),
-              //         titlesData: FlTitlesData(
-              //           leftTitles: const AxisTitles(
-              //             sideTitles: SideTitles(showTitles: false),
-              //           ),
-              //           bottomTitles: AxisTitles(
-              //             sideTitles: SideTitles(
-              //               showTitles: true,
-              //               getTitlesWidget: (double value, TitleMeta meta) {
-              //                 const style = TextStyle(
-              //                   color: Colors.black,
-              //                   fontSize: 14,
-              //                 );
-              //                 Widget text;
-              //                 switch (value.toInt()) {
-              //                   case 0:
-              //                     text = const Text('Dom', style: style);
-              //                     break;
-              //                   case 1:
-              //                     text = const Text('Lun', style: style);
-              //                     break;
-              //                   case 2:
-              //                     text = const Text('Mar', style: style);
-              //                     break;
-              //                   case 3:
-              //                     text = const Text('Mié', style: style);
-              //                     break;
-              //                   case 4:
-              //                     text = const Text('Jue', style: style);
-              //                     break;
-              //                   case 5:
-              //                     text = const Text('Vie', style: style);
-              //                     break;
-              //                   case 6:
-              //                     text = const Text('Hoy', style: style);
-              //                     break;
-              //                   default:
-              //                     text = const Text('', style: style);
-              //                     break;
-              //                 }
-              //                 return SideTitleWidget(
-              //                   axisSide: meta.axisSide,
-              //                   space: 16, // margen
-              //                   child: text,
-              //                 );
-              //               },
-              //             ),
-              //           ),
-              //         ),
-              //         borderData: FlBorderData(show: false),
-              //         barGroups: _buildBarGroups(),
-              //       ),
-              //     ),
-              //                  ),
-              //  ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     _buildDayCircle('DOM', true),
+              //     _buildDayCircle('LUN', true),
+              //     _buildDayCircle('MAR', true),
+              //     _buildDayCircle('MIE', true),
+              //     _buildDayCircle('JUE', false),
+              //     _buildDayCircle('VIE', false),
+              //     _buildDayCircle('SAB', false),
+              //   ],
+              // ),
             ],
           ),
         ),
       ),
     );
   }
-
-// List<BarChartGroupData> _buildBarGroups() {
-//   final List<int> calorieData = [4121, 5311, 8941, 10321, 9531, 7843, 2986];
-//   // final List<int> stars = [0, 0, 1, 2, 3, 4, 0]; // Representa los días con estrellas
-
-//   return calorieData.asMap().entries.map((entry) {
-//     int index = entry.key;
-//     int value = entry.value;
-//     return BarChartGroupData(
-//       x: index,
-//       barRods: [
-//         BarChartRodData(
-//           toY: value.toDouble(),
-//           color: Colors.orange,
-//           width: 16,
-//           borderRadius: BorderRadius.circular(4),
-//           backDrawRodData: BackgroundBarChartRodData(
-//             show: true,
-//             toY: 10000,
-//             color: Colors.grey.withOpacity(0.3),
-//           ),
-//         ),
-//       ],
-//       showingTooltipIndicators: [],
-//     );
-//   }).toList();
-// }
 
   Widget _buildStatColumn(IconData icon, String value, String label) {
     return Column(
@@ -235,5 +176,4 @@ class HomeScreen  extends StatelessWidget {
     );
   }
 }
-
 
