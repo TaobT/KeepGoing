@@ -47,9 +47,11 @@ Como usuario, quiero recibir frases motivacionales basadas en timpos estrategico
 - Debe mostrar una frase motivacional en la pantalla de monitoreo cada cierto timpo transcurrido. 
 
 # Prototipo propuesto 
-<img src="Page_1.png" width="200" >
-<img src="Page_2.png" width="200" >
-<img src="Page_3.png" width="200" >
+<div style="display: flex; justify-content: space-between;">
+  <img src="Page_1.png" width="200" />
+  <img src="Page_2.png" width="200" />
+  <img src="Page_3.png" width="200" />
+</div>
 
 # Ruta del tablero
 - [Tablero en Trello](https://trello.com/invite/b/Xq6jTaFR/ATTI21a09b24e08dbf764fb0d385649f96dcD42161E3/keep-going)
