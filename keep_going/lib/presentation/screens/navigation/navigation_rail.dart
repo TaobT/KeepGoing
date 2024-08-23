@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keep_going/presentation/screens/screens.dart';
+import 'package:keep_going/service/mysql_service.dart';
 
 class NavigationBar1 extends StatefulWidget {
   const NavigationBar1({super.key});
@@ -10,6 +11,9 @@ class NavigationBar1 extends StatefulWidget {
 
 class _NavigationBar1State extends State<NavigationBar1> {
   int currentPageIndex = 0;
+
+  final MySQLService mySQLService = MySQLService();
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +46,10 @@ class _NavigationBar1State extends State<NavigationBar1> {
       ),
       body: IndexedStack(
         index: currentPageIndex,
-        children: const [
-          HomeScreen(), 
-          StepCalendar(), 
-          LogrosScreen(),
+        children:  [
+          const HomeScreen(), 
+          const StepCalendar(), 
+          LogrosScreen(mySQLService: mySQLService),
         ],
       ),
     );

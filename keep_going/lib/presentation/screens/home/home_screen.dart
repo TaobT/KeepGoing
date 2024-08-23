@@ -76,13 +76,13 @@ class _HomeScreenState extends State<HomeScreen> {
               CircularPercentIndicator(
                 radius: 180.0,
                 lineWidth: 13.0,
-                percent: _temp / 100, 
+                percent: _pulso, 
                 center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Icon(Icons.local_fire_department, size: 120.0, color: Colors.black,),
                     Text(
-                      _temp.toStringAsFixed(1), 
+                      _pulso.toStringAsFixed(1), 
                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 40,
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),    
                     const Text(
-                      'Temperatura (°C)',
+                      'Frec. Cardiaca (lpm)',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildStatColumn(Icons.favorite, _oxigeno.toStringAsFixed(1), 'Frec. Cardiaca (lpm)'),
+                  _buildStatColumn(Icons.favorite, _temp.toStringAsFixed(1),'Temperatura (°C)' ),
                   _buildStatColumn(Icons.speed, _pulso.toStringAsFixed(2), 'Oxígeno (h2o)'),
                 ],
               ),

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 // import 'package:keep_going/presentation/screens/home/home_screen.dart';
 import 'package:keep_going/presentation/screens/navigation/navigation_rail.dart';
+import 'package:keep_going/service/mysql_service.dart';
 
-
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final MySQLService mysqlService = MySQLService();
+  await mysqlService.getConnection();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
