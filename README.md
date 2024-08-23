@@ -59,9 +59,9 @@ Como usuario, quiero recibir frases motivacionales basadas en timpos estrategico
 <img src="001.jpeg" width="300" />
 
 ## Aplicación
-<img src="003.jpeg" width="300" >
-<img src="002.jpeg" width="300" >
-<img src="004.jpeg" width="300" >
+<img src="003.jpeg" width="200" >
+<img src="002.jpeg" width="200" >
+<img src="004.jpeg" width="200" >
 
 ## Dashboard
-<img src="005.jpeg" width="300" />
+<img src="005.jpeg" width="400" />
