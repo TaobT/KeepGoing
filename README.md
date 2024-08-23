@@ -56,12 +56,12 @@ Como usuario, quiero recibir frases motivacionales basadas en timpos estrategico
 
 # Resultados
 ## Prototipo
-<img src="001.jpg" width="300" />
+<img src="001.jpeg" width="300" />
 
 ## Aplicación
-<img src="003.jpg" width="300" >
-<img src="002.jpg" width="300" >
-<img src="004.jpg" width="300" >
+<img src="003.jpeg" width="300" >
+<img src="002.jpeg" width="300" >
+<img src="004.jpeg" width="300" >
 
 ## Dashboard
-<img src="005.jpg" width="300" />
+<img src="005.jpeg" width="300" />
